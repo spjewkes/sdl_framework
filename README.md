@@ -15,5 +15,5 @@ The SDL framework class provides other utility functions for accessing informati
 * __height()__ - return the height in pixels of the SDL window.
 
 
-__NOTE: This is currently designed for building on a Mac OS X and needs work to improve portability__
+__NOTE: This is currently designed for building on a Mac OS X and Linux only__
 
