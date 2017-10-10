@@ -1,5 +1,6 @@
 CPP=g++
 CPPFLAGS=-std=c++11 -Wall -Wextra
+LIBS=
 EXE=run_example
 
 OBJ_DIR=obj
@@ -15,10 +16,10 @@ OS := $(shell uname)
 
 ifeq ($(OS),Darwin)
 # Mac OS
-	CPPFLAGS+=-framework SDL2
+	LIBS+=-framework SDL2
 else
 # Assume Linux for now
-	CPPFLAGS+=-lSDL2
+	LIBS+=-lSDL2
 endif
 
 default: debug
@@ -36,7 +37,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(DEPS)
 	$(CPP) $(CPPFLAGS) -c -o $@ $<
 
 $(EXE): $(OBJ)
-	$(CPP) $(CPPFLAGS) $^ -o $@
+	$(CPP) $(CPPFLAGS) $(LIBS) $^ -o $@
 
 setup_build:
 	@mkdir -p $(OBJ_DIR)
