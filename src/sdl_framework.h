@@ -1,3 +1,6 @@
+#ifndef __SDL_FRAMEWORK_H__
+#define __SDL_FRAMEWORK_H__
+
 #include <exception>
 #include <chrono>
 #include <SDL2/SDL.h>
@@ -121,3 +124,5 @@ private:
 	int w = 0;
 	int h = 0;
 };
+
+#endif

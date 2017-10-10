@@ -1,3 +1,6 @@
+#ifndef __EXAMPLE_H__
+#define __EXAMPLE_H__
+
 #include <SDL2/SDL.h>
 #include "sdl_framework.h"
 
@@ -42,3 +45,5 @@ public:
 	{
 	}
 };
+
+#endif
