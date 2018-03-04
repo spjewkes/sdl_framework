@@ -22,11 +22,11 @@ public:
 			static int z = 0;
 			c += static_cast<int>(30.0f * elapsed_time);
 			z += static_cast<int>(75.0f * elapsed_time);
-			SDL_Renderer *renderer = get_renderer();
+			SDL_Renderer *renderer = GetRenderer();
 
-			for (int y=0; y<height(); y++)
+			for (int y=0; y<ScreenHeight(); y++)
 			{
-				for (int x=0; x<width(); x++)
+				for (int x=0; x<ScreenWidth(); x++)
 				{
 					int r = (x * x) + (y * y) + z;
 					float f = (static_cast<float>((r) % 256)) / 256.0f;

@@ -3,7 +3,7 @@
 int main()
 {
 	Example example(800, 600);
-	example.start();
+	example.Start();
 
     return 0;
 }
