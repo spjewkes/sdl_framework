@@ -36,8 +36,6 @@ public:
 				}
 			}
 
-			SDL_RenderPresent(renderer);
-			
 			return true;
 		}
 
