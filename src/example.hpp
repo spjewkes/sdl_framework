@@ -2,7 +2,7 @@
 #define __EXAMPLE_H__
 
 #include <SDL2/SDL.h>
-#include "sdl_framework.h"
+#include "sdl_framework.hpp"
 
 using namespace std;
 

@@ -6,10 +6,10 @@ EXE=run_example
 OBJ_DIR=obj
 SRC_DIR=src
 
-_DEPS=sdl_framework.h example.h
+_DEPS=sdl_framework.hpp example.hpp
 DEPS=$(patsubst %,$(SRC_DIR)/%,$(_DEPS))
 
-_OBJ=main.o
+_OBJ=main.o sdl_framework.o
 OBJ=$(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
 
 OS := $(shell uname)
