@@ -56,6 +56,11 @@ protected:
 	void DrawLine(int x0, int y0, int x1, int y1);
 	void FillCircle(int xc, int yc, int r);
 
+	void FillBox(int x0, int y0, int x1, int y1);
+	void FillPolygon(int num_points, int *points);
+	void FillTrapezoid(int y_top, int y_bottom, int x0_top, int x1_top, int x0_bottom, int x1_bottom);
+	void FillTriangle(int x0, int y0, int x1, int y1, int x2, int y2);
+
 	void SetDrawColor(int r, int g, int b, int a);
 	void ClearScreen(int r, int g, int b, int a);
 
