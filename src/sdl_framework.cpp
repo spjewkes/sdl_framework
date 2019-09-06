@@ -135,7 +135,7 @@ void SDLFramework::Start()
 		char title[256];
 		snprintf(title, 256, "%8.2f fps - %s", 1.0 / elapsed_time.count(), GetName());
 		SDL_SetWindowTitle(window, title);
-				
+
 		if (!OnUpdate(elapsed_time.count()))
 		{
 			throw SDLException("Failed on game update");

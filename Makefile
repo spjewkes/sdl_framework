@@ -16,6 +16,7 @@ OS := $(shell uname)
 
 ifeq ($(OS),Darwin)
 # Mac OS
+	CPPFLAGS+=-F/Library/Frameworks
 	LIBS+=-framework SDL2
 else
 # Assume Linux for now
