@@ -20,20 +20,17 @@ public:
 		{
 			static int c = 0;
 			static int z = 0;
-			c += static_cast<int>(30.0f * elapsed_time);
-			z += static_cast<int>(75.0f * elapsed_time);
+			c += static_cast<int>(16.0f * elapsed_time);
+			z += static_cast<int>(123.0f * elapsed_time);
 			SDL_Renderer *renderer = GetRenderer();
 
 			for (int y=0; y<ScreenHeight(); y++)
 			{
-				for (int x=0; x<ScreenWidth(); x++)
-				{
-					int r = (x * x) + (y * y) + z;
-					float f = (static_cast<float>((r) % 256)) / 256.0f;
+				int r = ((y * y) >> 2) + z;
+				float f = (static_cast<float>((r) % 256)) / 256.0f;
 
-					SDL_SetRenderDrawColor(renderer, 255 - (f * 255), c, f * 255, 255);
-					SDL_RenderDrawPoint(renderer, x, y);
-				}
+				SDL_SetRenderDrawColor(renderer, 255 - (f * 255), c, f * 255, 255);
+				DrawLine(0, y, ScreenWidth() - 1, y);
 			}
 
 			return true;
