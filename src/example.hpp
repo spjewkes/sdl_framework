@@ -33,6 +33,14 @@ public:
 				DrawLine(0, y, ScreenWidth() - 1, y);
 			}
 
+			int *pixels = static_cast<int*>(LockScreen());
+			for (int y=0; y<ScreenHeight(); y++)
+			{
+				*pixels = 0xffffffff;
+				pixels += ScreenWidth() + y;
+			}
+			UnlockScreen();
+
 			return true;
 		}
 

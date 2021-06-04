@@ -13,7 +13,7 @@ SDLFramework::SDLFramework(int width, int height) : w(width), h(height), m_mouse
 		throw SDLException("Failed to create SDL window");
 	}
 
-	renderer = SDL_CreateRenderer(window, -1, 0);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
 	if (!renderer)
 	{
 		throw SDLException("Failed to create SDL renderer");
@@ -145,6 +145,20 @@ void SDLFramework::Start()
 	}
 
 	OnDestroy();
+}
+
+void* SDLFramework::LockScreen()
+{
+	SDL_RenderPresent(GetRenderer());
+	SDL_Surface *surface = SDL_GetWindowSurface(window);
+	SDL_LockSurface(surface);
+	return surface->pixels;
+}
+
+void SDLFramework::UnlockScreen()
+{
+	SDL_Surface *surface = SDL_GetWindowSurface(window);
+	SDL_UnlockSurface(surface);
 }
 
 void SDLFramework::DrawLine(int x0, int y0, int x1, int y1)

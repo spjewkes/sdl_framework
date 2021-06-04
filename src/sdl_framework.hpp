@@ -49,6 +49,9 @@ protected:
 	int ScreenWidth() const { return w; }
 	int ScreenHeight() const { return h; }
 
+	void* LockScreen();
+	void UnlockScreen();
+
 	int GetMouseX() const { return m_mousePosX; }
 	int GetMouseY() const { return m_mousePosY; }
 	KeyState GetMouse(int buttonID) const { return m_mouse[buttonID]; }
