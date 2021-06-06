@@ -36,7 +36,7 @@ public:
 			int *pixels = static_cast<int*>(LockScreen());
 			for (int y=0; y<ScreenHeight(); y++)
 			{
-				*pixels = 0xffffffff;
+				*pixels = 0xff00ffff;
 				pixels += ScreenWidth() + y;
 			}
 			UnlockScreen();
